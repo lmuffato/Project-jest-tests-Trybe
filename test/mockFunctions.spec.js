@@ -61,6 +61,9 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.power(1, 10)).toEqual(1);
     expect(mockFunctions.power(0, 0)).toEqual(1);
   });
+
+  // conteúdo utilizado para realização do exercício.
+  // https://www.programiz.com/javascript/examples/factorial
   test('testa função factorial', () => {
     mockFunctions.factorial.mockImplementation((a) => {
       let fact = 1;
@@ -69,6 +72,7 @@ describe('verifica as funções e os mocks', () => {
       }
       return fact;
     });
+
     expect(mockFunctions.factorial(5)).toEqual(120);
     expect(mockFunctions.factorial(10)).toEqual(3628800);
     expect(mockFunctions.factorial(3)).toEqual(6);
