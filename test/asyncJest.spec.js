@@ -11,12 +11,9 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('o retorno do telefonema', () => {
-  test('atende', async () => {
-    const response = await answerPhone(true);
-    expect(response).toBe('Oi!');
-  });
+  test('atende', async () => answerPhone(true).then((data) => expect(data).toBe('Oi!')));
+
   test('ocupado', async () => {
-    const response = await answerPhone(false);
-    expect(response).rejects.toMatch('Infelizmente não podemos atender...');
+    await expect(answerPhone(false)).rejects.toBe('Infelizmente não podemos atender...');
   });
 });
