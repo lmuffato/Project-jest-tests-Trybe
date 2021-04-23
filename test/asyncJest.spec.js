@@ -11,8 +11,8 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('o retorno do telefonema', () => {
   test('atende', async () => { // turns function into async
-    const apiURL = await answerPhone('alo'); // waits for it's answer
-    expect(apiURL).toEqual('Oi!');
+    const apiAnswer = await answerPhone('alo'); // waits for it's answer
+    expect(apiAnswer).toEqual('Oi!');
   });
   test('ocupado', async () => { // turns fn into async
     try { // call function
