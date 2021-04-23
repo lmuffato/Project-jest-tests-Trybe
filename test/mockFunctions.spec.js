@@ -19,7 +19,10 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
  * Referência da funcao: https://stackoverflow.com/questions/3959211/what-is-the-fastest-factorial-function-in-javascript
  */
 function factorial(n, r = 1) {
-  while (n > 0) r *= n--;
+  while (n > 0) {
+    r *= n;
+    n -= 1;
+  }
   return r;
 }
 
