@@ -26,10 +26,10 @@ describe('verifica o usuário', () => {
   // Crie sua mock da função fetchURL() aqui
   const myUser = {
     name: {
-      first: 'Antonio',
+      first: 'Antônio',
       last: 'Britto',
     },
-    gender: 'Male',
+    gender: 'male',
     location: {
       country: 'Brazil',
     },
