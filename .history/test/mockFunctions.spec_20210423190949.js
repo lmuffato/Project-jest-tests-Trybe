@@ -74,7 +74,7 @@ describe('verifica as funções e os mocks', () => {
       .mockImplementation((a) => {
         let fact = a;
         for (let i = 1; i < a; i += 1) {
-          fact *= i;
+          fact *= a;
         }
         return fact;
       });
