@@ -1,4 +1,4 @@
-const assert = require('assert');
+// const assert = require('assert');
 const answerPhone = require('../src/asyncJest');
 /*
 A função answerPhone recebe um parâmetro boleano.
@@ -25,3 +25,4 @@ describe('o retorno do telefonema', () => {
     }
   });
 });
+// https://jestjs.io/pt-BR/docs/asynchronous
