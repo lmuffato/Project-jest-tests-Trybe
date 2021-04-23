@@ -20,7 +20,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  jest.spyOn(adventure, 'randomAttack') // create a copy mock function
+  jest.spyOn(adventure, 'randomAttack'); // create a copy mock function
   beforeEach(adventure.randomAttack); // removes one adventurer before each test
   afterEach(() => console.log(adventure.specialists.map((adventurer) => // prints adventurer's list after each test
     `${adventurer.classe} adventurer ${adventurer.nome} is still alive`)));
