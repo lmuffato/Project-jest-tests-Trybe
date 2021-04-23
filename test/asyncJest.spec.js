@@ -1,6 +1,3 @@
-// const assert = require('assert');
-// const { exception } = require('console');
-// const { hasUncaughtExceptionCaptureCallback } = require('process');
 const answerPhone = require('../src/asyncJest');
 /*
 A função answerPhone recebe um parâmetro boleano.
@@ -17,14 +14,29 @@ describe('o retorno do telefonema', () => {
     const atende = await answerPhone(true);
     expect.assertions(1);
     expect(atende).toBe('Oi!');
-    // assert.fail();
-    // Insira seu teste assíncrono aqui
   });
+
   test('ocupado', async () => {
+    const erro = 'Infelizmente não podemos atender...';
+    const ocupado = await answerPhone(false).catch((error) => expect(error.message).toEqual(erro));
     expect.assertions(1);
-    await answerPhone(false);
-    expect.toThrow('Infelizmente não podemos atender...');
-    // assert.fail();
-    // Insira seu teste assíncrono aqui
+    return ocupado;
   });
 });
+
+// 16 inseri async para informar que é uma função assincrona
+// 17 criei uma variável "atende" que guarda o valor recebido pela função e inseri o
+// await para informar uma espera.
+// 18 informo a quantidade de expection no Teste
+// 19 passo a variavel que guarda o valor da minha função e que está sendo
+// comparado com o que o teste espera.
+
+// 22 insiro async para informar que é uma função assincrona.
+// 23 crie variavel para guardar a mensagem de erro que será comparado
+// 24 criei variavel 'ocupado' que guarda  valor da função com um Boolean false, chamo
+// o catch para capturar um erro, ele recebe  o parametro error o qual atribuo o message parametro
+// que busca só a mensagem legivel para humanos e comparo com a const erro onde está guardado o
+// valor da mensagem
+
+// Encontrei sobre o (message) em pesquisa sobre Error no site
+// :https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Error
