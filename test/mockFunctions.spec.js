@@ -17,7 +17,6 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 jest.mock('../src/mockFunctions');
 
 describe('verifica as funções e os mocks', () => {
-
   mockFunctions.add.mockImplementation((num1, num2) => num1 + num2);
   mockFunctions.subtract.mockImplementation((num1, num2) => num1 - num2);
   mockFunctions.multiply.mockImplementation((num1, num2) => num1 * num2);
