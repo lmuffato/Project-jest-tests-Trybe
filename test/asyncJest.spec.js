@@ -16,8 +16,10 @@ describe('o retorno do telefonema', () => {
   });
 
   test('ocupado', async () => {
-    await expect(answerPhone(false)).rejects.toThrow('Infelizmente não podemos atender...');
+    await expect(answerPhone(false))
+      .rejects.toThrowError(new Error('Infelizmente não podemos atender...'));
   });
 });
 
 // Link para documentação do Jest sobre testes assíncronos: https://jestjs.io/pt-BR/docs/asynchronous
+// Link para documentação do toThrowError/ toThrow: https://jestjs.io/pt-BR/docs/expect#tothrowerror
