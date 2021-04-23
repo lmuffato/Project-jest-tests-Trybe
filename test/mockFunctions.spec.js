@@ -22,6 +22,15 @@ describe('verifica as funções e os mocks', () => {
   mockFunctions.subtract.mockImplementation((a, b) => a - b);
   mockFunctions.divide.mockImplementation((a, b) => a / b);
   mockFunctions.add.mockImplementation((a, b) => a + b);
+  mockFunctions.power.mockImplementation((a, b) => a ** b);
+
+  mockFunctions.factorial.mockImplementation((a) => {
+    let fact = 1;
+    for (let index = 1; index <= a; index += 1) {
+      fact *= index; // https://www.w3schools.com/js/js_operators.asp
+    }
+    return fact;
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
