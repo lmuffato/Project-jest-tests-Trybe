@@ -9,14 +9,15 @@ a função recebe como parâmetro true e false, respectivamente.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-
+// x------------------ requisito 1 -------------------x
+// requisito jeito com ajuda dos colegas Rafael medeiros, lucas pedroso
 describe('o retorno do telefonema', () => {
-  test('atende', () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+  test('atende', async () => {
+    const fone = await answerPhone(true);
+    expect(fone).toBe('Oi!');
   });
-  test('ocupado', () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+  test('ocupado', async () => {
+    expect.assertions(1);
+    return expect(answerPhone()).rejects.toThrowError('Infelizmente não podemos atender...');
   });
 });
