@@ -19,10 +19,9 @@ describe('o retorno do telefonema', () => {
 
   test('ocupado', async () => {
     try {
-      await expect(answerPhone(false))
+      await expect(answerPhone(false)); }
+    catch (err) {
+      alert(err);
     }
-    catch (err){
-      alert(err)
-    };
-  });
+  })
 });
