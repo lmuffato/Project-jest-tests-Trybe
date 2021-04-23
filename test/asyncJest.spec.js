@@ -23,8 +23,7 @@ describe('o retorno do telefonema', () => {
     expect.assertions(1);
     try {
       await answerPhone(undefined);
-    }
-    catch (error) {
+    } catch (error) {
       expect(error).toEqual(new Error('Infelizmente não podemos atender...'));
     }
   });
