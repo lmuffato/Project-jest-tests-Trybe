@@ -32,7 +32,7 @@ const tunicoUser = {
 
 describe('verifica o usuário', () => {
   api.fetchURL = jest
-    .spyOn(api, 'fetchURL')
+    .fn()
     .mockResolvedValue(tunicoUser);
 
   test('verifica se o usuário é o tunico', async () => (
