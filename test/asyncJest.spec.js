@@ -15,6 +15,7 @@ describe('o retorno do telefonema', () => {
     expect(apiAnswer).toEqual('Oi!');
   });
   test('ocupado', async () => { // turns fn into async
+    expect.assertions(1);
     try { // call function
       await answerPhone(); // waits for it's answer
     } catch (error) { // catchs error
