@@ -20,6 +20,6 @@ describe('o retorno do telefonema', () => {
     // assert.fail();
     expect.assertions(1);
     await expect(answerPhone(false))
-      .rejects.toThrowError(new Error('Infelizmente não podemos atender...'));
+      .rejects.toThrowError(('Infelizmente não podemos atender...'));
   });
 });
