@@ -10,10 +10,9 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('o retorno do telefonema', () => {
-  test('atende', () => {
-    return answerPhone(true).then((data) => expect(data).toEqual('Oi!'));
-  });
+  test('atende', () => answerPhone(true).then((data) => expect(data).toEqual('Oi!')));
   test('ocupado', async () => {
-    return answerPhone(true).catch((erro) => expect(erro).toEqual('Infelizmente não podemos atender...'));
+    const error = 'Infelizmente não podemos atender...';
+    return answerPhone(true).catch((erro) => expect(erro).toEqual(error));
   });
 });
