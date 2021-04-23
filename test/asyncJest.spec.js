@@ -8,17 +8,20 @@ Complete o código abaixo para testar as situações em que
 a função recebe como parâmetro true e false, respectivamente.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
-
-Iniciando o projeto
 */
 
 describe('o retorno do telefonema', () => {
-  test('atende', () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+  test('atende', async () => {
+    const response = await answerPhone(true);
+    expect(response).toEqual('Oi!');
   });
-  test('ocupado', () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+  test('ocupado', async () => {
+    try {
+      const response = await answerPhone(false);
+    } catch (error) {
+      expect(error).toEqual(new Error('Infelizmente não podemos atender...'));
+    }
+    // const response = await answerPhone(false);
+    // return expect(response).toThrowError('Infelizmente não podemos atender...');
   });
 });
