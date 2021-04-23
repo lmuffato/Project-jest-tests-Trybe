@@ -25,7 +25,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('verifica o usuário', () => {
   // Crie sua mock da função fetchURL() aqui
   // Referência: https://github.com/tryber/sd-10a-live-lectures/pulls  -> branch 10.3 - Jest - Simulando comportamentos -> linhas: 242 ~ 263
-  // Arquivo: revisao-aula-anterior.md, do Jensen.
+  // Arquivo: exemplo-course.js, do Jensen.
   const tunicaoData = {
     gender: 'male',
     name: { first: 'Antônio', last: 'Britto' },
