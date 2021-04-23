@@ -21,21 +21,18 @@ Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-fetchURL = {
-gender: 'Masculino',
-name: {first: 'Antônio',
-last: 'Britto'
-},
-location: {country: 'Brasil'},
-email: 'tunico@bol.com.br',
-login: { username: 'tunicao123',
-password: 1234567890
-},
-}
+// fetchURL = {
+//   gender: 'Masculino',
+//   name: {first: 'Antônio',
+//   last: 'Britto'
+//   },
+//   location: { country: 'Brasil' },
+//   email: 'tunico@bol.com.br',
+//   login: { username: 'tunicao123',
+//   password: 1234567890,
+//   },
+// };
 
-describe('verifica o usuário', () => {
-  const apiURL = jest.spyOn( api, "fetchURL");
-  afterEach(apiURL.mockReset);
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
