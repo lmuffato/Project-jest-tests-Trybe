@@ -49,3 +49,5 @@ describe('verifica o usuário', () => {
     })
   ));
 });
+
+// Função resolvida com ajuda no plantão da Joicy dia 23/04
