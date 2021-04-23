@@ -20,12 +20,14 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  beforeEach(() => randomAttack());
-  afterEach(() => {
+  const printSurvivors = () => {
     const grupoVivo = specialists.map(({ nome }) => nome);
     const print = grupoVivo.length > 1 ? grupoVivo : grupoVivo[0];
     console.log(print);
-  });
+  };
+
+  beforeEach(() => randomAttack());
+  afterEach(() => printSurvivors());
 
   test('depois da primeira aventura', () => {
     expect(specialists.length).toBe(5);
