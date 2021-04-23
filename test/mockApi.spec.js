@@ -1,7 +1,7 @@
-// const https = require('node-https');
 const api = require('../src/mockApi');
+
 jest.mock('../src/mockApi');
-const user = {
+const userMock = {
   gender: 'male',
   name: { title: 'Mr', first: 'Antônio', last: 'Britto' },
   location: { country: 'Brazil' },
@@ -12,7 +12,7 @@ const user = {
   },
 };
 
-api.fetchURL.mockImplementation(() => Promise.resolve(user));
+api.fetchURL.mockImplementation(() => Promise.resolve(userMock));
 
 /*
 A função fetchURL retorna um JSON com informações de um usuário aleatório buscadas da API 'randomuser.me'.
