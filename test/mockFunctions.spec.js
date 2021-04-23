@@ -1,4 +1,5 @@
 const mockFunctions = require('../src/mockFunctions');
+
 jest.mock('../src/mockFunctions');
 
 /*
@@ -22,7 +23,7 @@ describe('verifica as funções e os mocks', () => {
   mockFunctions.divide.mockImplementation((a, b) => a / b);
   mockFunctions.power.mockImplementation((a, b) => a ** b);
   mockFunctions.factorial.mockImplementation((a) => {
-    if (a === 1){
+    if (a === 1) {
       return 1;
     }
     return a * mockFunctions.factorial(a - 1); // função recursiva em javascript - conteúdo apresentado pelo Rafael Medeiros <3
