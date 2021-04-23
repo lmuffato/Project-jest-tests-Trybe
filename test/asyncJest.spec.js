@@ -20,8 +20,7 @@ describe('o retorno do telefonema', () => {
   test('ocupado', () => {
     // Insira seu teste assíncrono aqui
     expect.assertions(1);
-    return answerPhone().catch((error) => {
-      expect(answerPhone(false)).rejects.toBe(error);
-    });
+    return expect(answerPhone(false))
+      .rejects.toEqual(new Error('Infelizmente não podemos atender...'));
   });
 });
