@@ -21,6 +21,8 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  // Referência: https://jestjs.io/pt-BR/docs/setup-teardown
+  beforeEach(() => adventure.randomAttack()); // antes de cada teste executa o random attack, diminuindo o numero de aventureiros em cada iteração.
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
