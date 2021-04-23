@@ -20,9 +20,8 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  beforeEach(() => {
-    adventure.randomAttack();
-  });
+  adventure.randomAttack = jest
+    .fn();
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
