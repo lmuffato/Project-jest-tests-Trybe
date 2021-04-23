@@ -24,19 +24,25 @@ beforeEach(() => {
 });
 
 describe('quem sobreviveu?', () => {
+  const array = adventure.specialists;
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
+    array.forEach(({ nome }) => console.log(`Mantém no jogo os aventureiros: ${nome}`));
   });
   test('depois da segunda aventura', () => {
     expect(adventure.specialists.length).toBe(4);
+    array.forEach(({ nome }) => console.log(`Mantém no jogo os aventureiros: ${nome}`));
   });
   test('depois da terceira aventura', () => {
     expect(adventure.specialists.length).toBe(3);
+    array.forEach(({ nome }) => console.log(`Mantém no jogo os aventureiros: ${nome}`));
   });
   test('depois da quarta aventura', () => {
     expect(adventure.specialists.length).toBe(2);
+    array.forEach(({ nome }) => console.log(`Mantém no jogo os aventureiros: ${nome}`));
   });
   test('depois da quinta aventura', () => {
     expect(adventure.specialists.length).toBe(1);
+    array.forEach(({ nome }) => console.log(`E o vencedor é: ${nome}`));
   });
 });
