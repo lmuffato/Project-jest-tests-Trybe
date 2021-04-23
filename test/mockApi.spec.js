@@ -60,7 +60,7 @@ describe('verifica o usuário', () => {
       thumbnail: 'https://randomuser.me/api/portraits/thumb/women/7.jpg',
     },
     nat: 'IE',
-  }
+  };
   api.fetchURL = jest.spyOn(api, 'fetchURL')
     .mockImplementation(() => Promise.resolve(tunico));
 
