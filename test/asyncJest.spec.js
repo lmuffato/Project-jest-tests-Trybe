@@ -10,15 +10,8 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('o retorno do telefonema', () => {
-  test('atende', () => answerPhone(true).then((answer) => {
-    expect(answer).toBe('Oi!');
-  }));
+  test('atende', () => expect(answerPhone(true)).resolves.toBe('Oi!'));
 
-  test('ocupado', () => {
-    // Insira seu teste assíncrono aqui
-    expect.assertions(1);
-    return answerPhone(false).catch((error) => {
-      expect(error).toEqual(Error('Infelizmente não podemos atender...'));
-    });
-  });
+  test('ocupado', () => expect(answerPhone(false)).rejects
+    .toThrow('Infelizmente não podemos atender...'));
 });
