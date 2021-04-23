@@ -10,13 +10,20 @@ a função recebe como parâmetro true e false, respectivamente.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+// Referência, documentação do jest para auxílio.
+//https://javascript.info/async-await - uso do try nos retornos assíncronos
+
 describe('o retorno do telefonema', () => {
-  test('atende', () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+  test('atende', async () => {
+    await expect(answerPhone(true)).resolves.toEqual('Oi!');
   });
-  test('ocupado', () => {
-    assert.fail();
+  test('ocupado', async () => {
+    try {
+      await expect(answerPhone(false))
+    }
+    catch (err){
+      alert(err)
+    }
     // Insira seu teste assíncrono aqui
   });
 });
