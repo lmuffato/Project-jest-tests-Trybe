@@ -9,14 +9,18 @@ a função recebe como parâmetro true e false, respectivamente.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-
+/* Source: https://github.com/tryber/sd-010-a-project-jest/blob/df6ec4f15d9f3a93ccfbf52daca301a96f247f0e/test/asyncJest.spec.js*/
 describe('o retorno do telefonema', () => {
-  test('atende', () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+  test('atende', async () => {
+    const answer = answerPhone(true);
+    return answer.then((msg) => {
+      expect(msg).toBe('Oi!');
+    });
   });
   test('ocupado', () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+    const ocupied = answerPhone(false);
+    return ocupied.catch((err) => {
+      expect(err).toBe(err);
+    });
   });
 });
