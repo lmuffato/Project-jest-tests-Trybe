@@ -16,7 +16,10 @@ describe('o retorno do telefonema', () => {
     expect(answerPhone(true)).resolves.toEqual('Oi!');
   });
   test('ocupado', async () => {
-    expect.assertions(1);
-    expect(answerPhone(false)).rejects.toEqual({ error: 'Infelizmente não podemos atender...' });
+    try {
+      await answerPhone(true);
+    } catch (error) {
+      expect(error).toEqual('Infelizmente não podemos atender...');
+    }
   });
 });
