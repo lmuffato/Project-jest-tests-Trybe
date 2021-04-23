@@ -20,7 +20,12 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  jest.spyOn(adventure, 'randomAttack') // create mock function
+    .mockImplementation(() => adventure.specialists // implement mock behavior
+      .shift(Math.ceil(Math.random() * adventure.specialists.length) - 1));
+  beforeEach(adventure.randomAttack); // removes one adventurer before each test
+  afterEach(() => console.log(adventure.specialists.map((adventurer) => // prints adventurer's list after each test
+    `${adventurer.classe} adventurer ${adventurer.nome} is still alive`)));
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
