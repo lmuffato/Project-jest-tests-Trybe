@@ -19,3 +19,5 @@ describe('o retorno do telefonema', () => {
     await expect(answerPhone(false)).rejects.toMatch('Infelizmente não podemos atender...');
   });
 });
+
+// Link para documentação do Jest sobre testes assíncronos: https://jestjs.io/pt-BR/docs/asynchronous

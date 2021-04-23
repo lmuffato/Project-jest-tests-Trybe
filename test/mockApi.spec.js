@@ -40,3 +40,5 @@ describe('verifica o usuário', () => {
     });
   });
 });
+
+// Link para documentação: https://jestjs.io/pt-BR/docs/mock-function-api#mockfnmockresolvedvaluevalue
