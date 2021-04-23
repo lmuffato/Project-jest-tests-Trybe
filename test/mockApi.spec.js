@@ -45,7 +45,7 @@ describe('verifica o usuário', () => {
   test('verifica se o usuário é o tunico', async () => {
     apiURL.mockResolvedValue(usuario);
     apiURL();
-    expect(usuario.gender).not.toEqual('male');
+    expect(usuario.gender).toEqual('male');
     expect(usuario.name.first).toEqual('Antônio');
     expect(usuario.name.last).toEqual('Britto');
     expect(usuario.location.country).toEqual('Brazil');
