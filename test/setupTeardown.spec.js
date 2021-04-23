@@ -1,5 +1,5 @@
 const adventure = require('../src/setupTeardown');
-const { specialists, randomAttack } = require('../src/setupTeardown');
+const { randomAttack } = require('../src/setupTeardown');
 /*
 Num universo não tão distante, um grupo de aventureiros da Trybe enfrentam uma série de testes.
 O grupo parte em direção ao sucesso, mas,
