@@ -22,8 +22,12 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 jest.mock('../src/mockApi');
+const mockFetch = api.fetchURL;
 
 describe('verifica o usuário', () => {
+
+  const mocktest = jest.spyOn(api, 'fetchURL').mockImplementation(mockFetch);
+
   const data = {
     gender: 'male',
     name: {
@@ -40,7 +44,9 @@ describe('verifica o usuário', () => {
     },
   };
 
-  api.fetchURL = jest.fn().mockResolvedValue(data);
+  mocktest.mockResolvedValue(data);
+
+  // api.fetchURL = jest.fn().mockResolvedValue(data);
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
