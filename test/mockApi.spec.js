@@ -32,8 +32,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 //   password: 1234567890,
 //   },
 // };
-
-
+/*
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
@@ -45,4 +44,5 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
       expect(user.login.password).toEqual('1234567890');
     })
   ));
-// });
+});
+*/
