@@ -24,16 +24,38 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica o usuário', () => {
   // Crie sua mock da função fetchURL() aqui
+  const usuario = {
+    gender: 'male',
+    name: {
+      first: 'Antônio',
+      last: 'Britto',
+    },
+    location: {
+      country: 'Brazil',
+    },
+    email: 'tunico@bol.com.br',
+    login: {
+      username: 'tunicao123',
+      password: '1234567890',
+    },
+  };
+  const apiURL = jest.spyOn(api, 'fetchURL');
+  afterEach(apiURL.mockReset());
+  // apiURL.mockResolvedValue(Promise.resolve({
+  //   json: () => Promise.resolve(usuario),
+  // }));
 
-  test('verifica se o usuário é o tunico', async () => (
-    api.fetchURL().then((user) => {
-      expect(user.gender).toEqual('male');
-      expect(user.name.first).toEqual('Antônio');
-      expect(user.name.last).toEqual('Britto');
-      expect(user.location.country).toEqual('Brazil');
-      expect(user.email).toEqual('tunico@bol.com.br');
-      expect(user.login.username).toEqual('tunicao123');
-      expect(user.login.password).toEqual('1234567890');
-    })
-  ));
+  test('verifica se o usuário é o tunico', async () => {
+    apiURL.mockResolvedValue(usuario);
+    // api.fetchURL().then((user) => {
+    apiURL();
+    // expectAssertions(7);
+    expect(usuario.gender).toEqual('male');
+    expect(usuario.name.first).toEqual('Antônio');
+    expect(usuario.name.last).toEqual('Britto');
+    expect(usuario.location.country).toEqual('Brazil');
+    expect(usuario.email).toEqual('tunico@bol.com.br');
+    expect(usuario.login.username).toEqual('tunicao123');
+    expect(usuario.login.password).toEqual('1234567890');
+  });
 });
