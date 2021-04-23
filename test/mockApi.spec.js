@@ -45,4 +45,4 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
       expect(user.login.password).toEqual('1234567890');
     })
   ));
-});
+// });
