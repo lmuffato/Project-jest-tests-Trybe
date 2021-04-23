@@ -1,4 +1,5 @@
 const adventure = require('../src/setupTeardown');
+
 /*
 Num universo não tão distante, um grupo de aventureiros da Trybe enfrentam uma série de testes.
 O grupo parte em direção ao sucesso, mas,
@@ -23,18 +24,23 @@ describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
 
   test('depois da primeira aventura', () => {
+    adventure.randomAttack = jest.fn().mockReturnValue(adventure.specialists.splice(5, 1));
     expect(adventure.specialists.length).toBe(5);
   });
   test('depois da segunda aventura', () => {
+    adventure.randomAttack = jest.fn().mockReturnValue(adventure.specialists.splice(4, 1));
     expect(adventure.specialists.length).toBe(4);
   });
   test('depois da terceira aventura', () => {
+    adventure.randomAttack = jest.fn().mockReturnValue(adventure.specialists.splice(3, 1));
     expect(adventure.specialists.length).toBe(3);
   });
   test('depois da quarta aventura', () => {
+    adventure.randomAttack = jest.fn().mockReturnValue(adventure.specialists.splice(2, 1));
     expect(adventure.specialists.length).toBe(2);
   });
   test('depois da quinta aventura', () => {
+    adventure.randomAttack = jest.fn().mockReturnValue(adventure.specialists.splice(1, 1));
     expect(adventure.specialists.length).toBe(1);
   });
 });
