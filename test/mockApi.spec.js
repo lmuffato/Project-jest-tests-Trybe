@@ -24,7 +24,6 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 jest.mock('../src/mockApi');
 
 describe('verifica o usuário', () => {
-
   api.fetchURL.mockImplementation(() => new Promise(function (resolve) {
     resolve({
       gender: 'male',
