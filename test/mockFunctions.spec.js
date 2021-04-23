@@ -1,5 +1,6 @@
 const mockFunctions = require('../src/mockFunctions');
 
+jest.mock('../src/mockFunctions');
 /*
 Criamos uma série de funções com eficiência duvidosa.
 Elas estão no arquivo 'src/mockFunctions.js'.
@@ -15,7 +16,24 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  mockFunctions.add.mockImplementation((a, b) => a + b);
+  mockFunctions.subtract.mockImplementation((a, b) => a - b);
+  mockFunctions.multiply.mockImplementation((a, b) => a * b);
+  mockFunctions.divide.mockImplementation((a, b) => a / b);
+  // Para o teste abaixo consultei o seguinte link:
+  // https://locomotivatech.com/2019/12/16/como-fazer-potenciacao-e-radiciacao-em-javascript/
+  // #:~:text=Vamos%20supor%20que%20temos%20um,Exemplo%20de%20potencia%C3%A7%C3%A3o%20com%20Javascript.
+  // &text=Perceba%20que%20utilizamos%20o%20operador,como%202%20*2%20*%202.
+  mockFunctions.power.mockImplementation((a, b) => a ** b);
+  // Para o teste a seguir consultei o seguinte link:
+  // https://www.youtube.com/watch?v=bHKxWB7RRcY
+  mockFunctions.factorial.mockImplementation((number) => {
+    let result = number;
+    for (let index = 1; index < number; index += 1) {
+      result *= index;
+    }
+    return result;
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
