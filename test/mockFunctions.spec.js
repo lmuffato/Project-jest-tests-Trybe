@@ -15,7 +15,26 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  mockFunctions.add = jest.fn().mockImplementation((a, b) => a + b);
+
+  mockFunctions.subtract = jest.fn().mockImplementation((a, b) => a - b);
+
+  mockFunctions.multiply = jest.fn().mockImplementation((a, b) => a * b);
+
+  mockFunctions.divide = jest.fn().mockImplementation((a, b) => a / b);
+
+  mockFunctions.power = jest.fn().mockImplementation((a, b) => a ** b);
+
+  // https://www.freecodecamp.org/news/how-to-factorialize-a-number-in-javascript-9263c89a4b38/
+  mockFunctions.factorial = jest.fn().mockImplementation((a) => {
+    if (a === 0 || a === 1) {
+      return 1;
+    }
+    for (let i = a - 1; i >= 1; i -= 1) {
+      a *= i;
+    }
+    return a;
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
