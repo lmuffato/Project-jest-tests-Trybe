@@ -14,8 +14,18 @@ O foco aqui é a utilização de mock functions.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+jest.mock('../src/mockFunctions');
+
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  mockFunctions.add.mockImplementation((a, b) => a + b);
+  mockFunctions.subtract.mockImplementation((a, b) => a - b);
+  mockFunctions.multiply.mockImplementation((a, b) => a * b);
+  mockFunctions.divide.mockImplementation((a, b) => a / b);
+  mockFunctions.power.mockImplementation((a, b) => a ** b);
+  // Para maior praticidade, peguei este exemplo de implementação do fatorial do link abaixo:
+  // https://gist.github.com/macsousa/dccd2abb2c68c5958846824e975482d3
+  mockFunctions.factorial
+    .mockImplementation((n) => (n === 0 || n === 1 ? n : n * mockFunctions.factorial(n - 1)));
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
