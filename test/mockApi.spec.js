@@ -29,7 +29,7 @@ describe('verifica o usuário', () => {
     location: {
       country: 'Brazil',
     },
-    email: 'tunico@bol.com.br ',
+    email: 'tunico@bol.com.br',
     login: {
       username: 'tunicao123',
       password: '1234567890',
@@ -37,7 +37,7 @@ describe('verifica o usuário', () => {
   };
 
   const apiURL = jest.spyOn(api, 'fetchURL');
-  apiURL.mockREsolvedValue(userTunico);
+  apiURL.mockResolvedValue(userTunico);
 
   api.fetchURL();
 
