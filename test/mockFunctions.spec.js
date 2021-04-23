@@ -14,7 +14,6 @@ Importante! A correção de código via mock functions não é uma aplicação u
 O foco aqui é a utilização de mock functions.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
-npm test mockFunctions.spec.js
 */
 
 describe('verifica as funções e os mocks', () => {
@@ -25,7 +24,7 @@ describe('verifica as funções e os mocks', () => {
   mockFunctions.power.mockImplementation((a, b) => (a ** b));
   mockFunctions.factorial.mockImplementation((n) => {
     let fact = 1;
-    for (let i = n; n > 0; i -= 1) {
+    for (let i = 1; i <= n; i += 1) {
       fact *= i;
     }
     return fact;
