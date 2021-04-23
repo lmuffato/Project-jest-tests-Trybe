@@ -5,6 +5,7 @@ O grupo parte em direção ao sucesso, mas,
 devido a ameaça de criaturas temíveis, o grupo não chegará inteiro ao fim.
 Após cada aventura um de nossos aventureiros cairá.
 Cada um dos testes abaixo verifica a quantidade de aventureiros após cada iteração.
+
 Sua missão aqui é:
 
   - Use a função randomAttack do objeto adventure
