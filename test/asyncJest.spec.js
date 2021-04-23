@@ -11,7 +11,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('o retorno do telefonema', () => {
-  test("atende", async () => {
+  test('atende', async () => {
     // Insira seu teste assíncrono aqui
     const resolve = await answerPhone(true);
     expect(resolve).toBe('Oi!');
