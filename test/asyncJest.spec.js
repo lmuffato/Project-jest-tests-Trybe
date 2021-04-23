@@ -8,9 +8,11 @@ describe('o retorno do telefonema', () => {
     expect(test).toEqual('oi');
   });
 
-  test('ocupado', () => {
-    expect.assertions(1);
-    return expect(answerPhone(false))
-      .rejects.toEqual(new Error('Infelizmente não podemos atender...'));
+  test('ocupado', async () => {
+    try {
+      await answerPhone(false);
+    } catch (err) {
+      expect(err.message).toBe('Infelizmente não podemos atender...');
+    }
   });
 });
