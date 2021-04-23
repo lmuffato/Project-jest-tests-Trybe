@@ -13,7 +13,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('o retorno do telefonema', () => {
   test('atende', async () => {
     expect.assertions(1);
-    const answer2 = await answerPhone(true);
+    const answer2 = await answerPhone(true).then((resolve) => resolve);
     expect(answer2).toEqual('Oi!');
   });
   test('ocupado', async () => {
