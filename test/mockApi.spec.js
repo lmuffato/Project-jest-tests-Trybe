@@ -1,4 +1,18 @@
+// const https = require('node-https');
 const api = require('../src/mockApi');
+jest.mock('../src/mockApi');
+const user = {
+  gender: 'male',
+  name: { title: 'Mr', first: 'Antônio', last: 'Britto' },
+  location: { country: 'Brazil' },
+  email: 'tunico@bol.com.br',
+  login: {
+    username: 'tunicao123',
+    password: '1234567890',
+  },
+};
+
+api.fetchURL.mockImplementation(() => Promise.resolve(user));
 
 /*
 A função fetchURL retorna um JSON com informações de um usuário aleatório buscadas da API 'randomuser.me'.
