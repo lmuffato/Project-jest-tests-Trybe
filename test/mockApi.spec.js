@@ -41,16 +41,11 @@ describe('verifica o usuário', () => {
   };
   const apiURL = jest.spyOn(api, 'fetchURL');
   afterEach(apiURL.mockReset());
-  // apiURL.mockResolvedValue(Promise.resolve({
-  //   json: () => Promise.resolve(usuario),
-  // }));
 
   test('verifica se o usuário é o tunico', async () => {
     apiURL.mockResolvedValue(usuario);
-    // api.fetchURL().then((user) => {
     apiURL();
-    // expectAssertions(7);
-    expect(usuario.gender).toEqual('male');
+    expect(usuario.gender).not.toEqual('male');
     expect(usuario.name.first).toEqual('Antônio');
     expect(usuario.name.last).toEqual('Britto');
     expect(usuario.location.country).toEqual('Brazil');
