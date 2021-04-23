@@ -1,4 +1,3 @@
-const assert = require('assert');
 const answerPhone = require('../src/asyncJest');
 /*
 A função answerPhone recebe um parâmetro boleano.
@@ -9,7 +8,8 @@ a função recebe como parâmetro true e false, respectivamente.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-/* Source: https://github.com/tryber/sd-010-a-project-jest/blob/df6ec4f15d9f3a93ccfbf52daca301a96f247f0e/test/asyncJest.spec.js*/
+
+// Source: https://github.com/tryber/sd-010-a-project-jest/blob/df6ec4f15d9f3a93ccfbf52daca301a96f247f0e/test/asyncJest.spec.js
 describe('o retorno do telefonema', () => {
   test('atende', async () => {
     const answer = answerPhone(true);
