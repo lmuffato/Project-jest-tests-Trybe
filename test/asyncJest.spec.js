@@ -20,10 +20,12 @@ describe('o retorno do telefonema', () => {
 
   test('ocupado', () => {
     expect.assertions(1);
-    // return answerPhone(false).cath((erro) => {
-    //   expect(erro).toStrictEqual(new Error('Infelizmente não podemos atender...'));
-    // });
-    return expect(answerPhone(false)).rejects
-      .toEqual(new Error('Infelizmente não podemos atender...'));
+    return answerPhone(false).catch((erro) => {
+      expect(erro).toStrictEqual(new Error('Infelizmente não podemos atender...'));
+    });
+    // return expect(answerPhone(false)).rejects
+    //   .toEqual(new Error('Infelizmente não podemos atender...'));
+
+    // funciona dos dois jeitos, fiz um com catch e um com reject
   });
 });
