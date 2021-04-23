@@ -40,3 +40,5 @@ describe('quem sobreviveu?', () => {
     expect(adventure.specialists.length).toBe(1);
   });
 });
+
+// Link p/ documentação consultada: https://jestjs.io/pt-BR/docs/setup-teardown
