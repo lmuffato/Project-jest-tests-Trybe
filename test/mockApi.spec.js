@@ -61,7 +61,7 @@ const resolvedValue = {
 };
 
 describe('verifica o usuário', () => {
-  // Crie sua mock da função fetchURL() aqui
+  // esse codigo foi baseado na aula da turma 10-A disponivel em:https://github.com/tryber/sd-10a-live-lectures/pull/30/files
   api.fetchURL = jest
     .fn()
     .mockResolvedValue(resolvedValue);
