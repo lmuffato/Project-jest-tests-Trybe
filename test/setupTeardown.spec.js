@@ -20,11 +20,13 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
+
   adventure.randomAttack = jest.fn()
     .mockReturnValueOnce(4)
     .mockReturnValueOnce(3)
     .mockReturnValueOnce(2)
     .mockReturnValueOnce(1);
+
   test('depois da primeira aventura', () => {
     expect(adventure.randomAttack()).toBe(4);
   });
