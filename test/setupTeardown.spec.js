@@ -18,6 +18,7 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
+// requisito feito com ajuda do aluno Nilson Ribeiro
 
 describe('quem sobreviveu?', () => {
   beforeEach(() => adventure.randomAttack());
