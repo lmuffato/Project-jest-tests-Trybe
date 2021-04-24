@@ -8,7 +8,7 @@ a função recebe como parâmetro true e false, respectivamente.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-
+// referência: Grande ajuda do Lucas Paz por meio de call - Slack
 describe('o retorno do telefonema', () => {
   test('atende', async () => {
     await expect(answerPhone(true)).resolves.toEqual('Oi!');
