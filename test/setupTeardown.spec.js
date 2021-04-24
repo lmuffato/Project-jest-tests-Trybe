@@ -5,6 +5,9 @@ O grupo parte em direção ao sucesso, mas,
 devido a ameaça de criaturas temíveis, o grupo não chegará inteiro ao fim.
 Após cada aventura um de nossos aventureiros cairá.
 Cada um dos testes abaixo verifica a quantidade de aventureiros após cada iteração.
+Setup e Teardown :
+Setup prepara o ambiente para o teste rodar e  o TearDor para depois do teste rodado.
+
 Sua missão aqui é:
 
   - Use a função randomAttack do objeto adventure
@@ -20,8 +23,12 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
-
+  beforeEach(() => {
+    adventure.randomAttack();
+  });
+  afterEach(() => {
+    adventure.specialists.splice(adventure.specialists.length, 1);
+  });
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
