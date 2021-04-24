@@ -19,6 +19,8 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+// Teste
+
 describe('quem sobreviveu?', () => {
   adventure.randomAttack = jest.fn()
     .mockReturnValueOnce(4)
