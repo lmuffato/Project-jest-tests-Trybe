@@ -37,9 +37,9 @@ describe('verifica o usuário', () => {
     },
   };
 
-  apiMock.mockResolvedValue(data);
+  // apiMock.mockResolvedValue(data);
 
-  test('verifica se o usuário é o tunico', async () => (
+  test('verifica se o usuário é o tunico', async () => {
     apiMock().then((user) => {
       expect(user.gender).toEqual('male');
       expect(user.name.first).toEqual('Antônio');
@@ -48,6 +48,10 @@ describe('verifica o usuário', () => {
       expect(user.email).toEqual('tunico@bol.com.br');
       expect(user.login.username).toEqual('tunicao123');
       expect(user.login.password).toEqual('1234567890');
-    })
-  ));
+    });
+
+    expect(apiMock).toHaveBeenCalled();
+    expect(apiMock).toHaveBeenCalledTimes(1);
+    expect(apiMock()).resolves.toBe(data);
+  });
 });
