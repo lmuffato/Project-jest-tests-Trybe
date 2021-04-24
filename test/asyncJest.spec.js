@@ -13,7 +13,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('o retorno do telefonema', () => {
   it('deveria retornar o atendimento oi', async () => {
-      expect(answerPhone(true)).resolves .toBe('Oi!');
+    expect(answerPhone(true)).resolves.toBe('Oi!');
   });
   it('deveria retornar um erro', async () => {
     expect(answerPhone(false)).rejects
