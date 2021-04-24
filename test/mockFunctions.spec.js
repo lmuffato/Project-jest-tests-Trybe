@@ -61,11 +61,11 @@ describe('verifica as funções e os mocks', () => {
   test('testa função factorial', () => {
     mockFunctions.factorial.mockImplementation((a) => {
       if (a > 0) {
-        let fact = 1;
+        let factor = 1;
         for (let index = 1; index <= a; index += 1) {
-          fact *= index;
+          factor *= index;
         }
-        return fact;
+        return factor;
       }
       return 0;
     });

@@ -8,7 +8,7 @@ a função recebe como parâmetro true e false, respectivamente.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-
+// requisito realizado com ajuda de Iago Ferraira
 describe('o retorno do telefonema', () => {
   answerPhone.answerPhone = jest.fn();
   test('atende', () => {
