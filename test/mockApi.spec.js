@@ -22,6 +22,7 @@ Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+// referência - exercício da Trybe que tinha manipulação de objetos e documentação.
 describe('verifica o usuário', () => {
   const infoList = {
     gender: 'male',

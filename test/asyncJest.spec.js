@@ -9,6 +9,7 @@ a função recebe como parâmetro true e false, respectivamente.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+// referência - documentação, https://jestjs.io/pt-BR/docs/tutorial-async
 describe('o retorno do telefonema', () => {
   test('atende', async () => {
     await expect(answerPhone(true)).resolves.toEqual('Oi!');
@@ -18,7 +19,8 @@ describe('o retorno do telefonema', () => {
     try {
       await expect(answerPhone(false));
     } catch (err) {
-      alert(err);
+      expect.assertions(1);
+      return expect(err).toEqual(new Error('Infelizmente não podemos atender...'));
     }
   });
 });
