@@ -1,4 +1,5 @@
 const api = require('../src/mockApi');
+
 /*
 A função fetchURL retorna um JSON com informações de um usuário aleatório buscadas da API 'randomuser.me'.
 No entanto, nos testes abaixo, queremos que todas as vezes que chamarmos a API a resposta contenha as informações do nosso adminis..Cof! Cof!.. programador favorito, Tunicão.
@@ -21,13 +22,9 @@ Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
-jest.mock('../src/mockApi');
-const mockFetch = api.fetchURL;
+// jest.mock('../src/mockApi');
 
 describe('verifica o usuário', () => {
-
-  const mocktest = jest.spyOn(api, 'fetchURL').mockImplementation(mockFetch);
-
   const data = {
     gender: 'male',
     name: {
@@ -44,9 +41,10 @@ describe('verifica o usuário', () => {
     },
   };
 
-  mocktest.mockResolvedValue(data);
+  jest.spyOn(api, 'fetchURL').mockResolvedValue(data);
 
-  // api.fetchURL = jest.fn().mockResolvedValue(data);
+  // api.fetchURL = jest.fn().mockResolvedValue(data); outra forma de passar o data
+  // requisito feito com auxilio do colega Rafael medeiros
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
