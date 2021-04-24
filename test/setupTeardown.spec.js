@@ -19,8 +19,19 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+// referência, documentação para achar o uso do afterAll. Se usar o filter, o retorno será de tudo que está dentro do objeto.
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  beforeEach(() => {
+    adventure.randomAttack();
+  });
+
+  afterEach(() => {
+    console.log(adventure.specialists.map(({ nome }) => nome));
+  });
+
+  afterAll(() => {
+    console.log('Bonus, parabéns: ', adventure.specialists.filter(({ nome }) => nome));
+  });
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);

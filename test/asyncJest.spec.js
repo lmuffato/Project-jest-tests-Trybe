@@ -9,7 +9,7 @@ a função recebe como parâmetro true e false, respectivamente.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
-// referência - documentação, https://jestjs.io/pt-BR/docs/tutorial-async
+// referência - documentação, https://jestjs.io/pt-BR/docs/tutorial-async - https://jestjs.io/pt-BR/docs/asynchronous
 describe('o retorno do telefonema', () => {
   test('atende', async () => {
     await expect(answerPhone(true)).resolves.toEqual('Oi!');
