@@ -16,20 +16,6 @@ const factorial = (a) => {
   }
   return fact;
 };
-// function calcularFatorialRecursivamente (a) {
-//   if (a === 1) {
-//     return 1;
-// }
-
-// return a * calcularFatorialRecursivamente (a - 1);
-// }
-
-// var fatorial = 5;
-// var resultado = 1;
-// for (var i = fatorial; i > 1; i--) {
-//     resultado *= i;
-// }
-// console.log(resultado);
 
 const add = (a, b) => a - b;
 
