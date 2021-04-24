@@ -23,7 +23,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica o usuário', () => {
-  const dataUser = {
+  const datUser = {
     gender: 'male',
     name: { first: 'Antônio', last: 'Britto' },
     location: { country: 'Brazil' },
@@ -32,7 +32,7 @@ describe('verifica o usuário', () => {
   };
 
   const api = jest.fn();
-  api.fetchURL = jest.fn().mockResolvedValue(dataUser);
+  api.fetchURL = jest.fn().mockResolvedValue(datUser);
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
