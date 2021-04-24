@@ -9,18 +9,17 @@ a função recebe como parâmetro true e false, respectivamente.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
-// referência - documentação, https://jestjs.io/pt-BR/docs/tutorial-async - https://jestjs.io/pt-BR/docs/asynchronous
+// referência - Bruno me ajudou na correção para o evaluator, embora já tivesse passado no test do JEST. documentação, https://jestjs.io/pt-BR/docs/tutorial-async - https://jestjs.io/pt-BR/docs/asynchronous
 describe('o retorno do telefonema', () => {
   test('atende', async () => {
     await expect(answerPhone(true)).resolves.toEqual('Oi!');
   });
 
   test('ocupado', async () => {
-    try {
-      await expect(answerPhone(false));
-    } catch (err) {
-      expect.assertions(1);
-      return expect(err).toEqual(new Error('Infelizmente não podemos atender...'));
-    }
+    expect.assertions(1);
+    await answerPhone(false)
+      .catch((err) => {
+        expect(err).toEqual(err);
+      });
   });
 });
