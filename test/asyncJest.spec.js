@@ -11,8 +11,12 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 // código feito baseado na documentação do Jest, das aulas da turma 8 e 7 com os professores Oliva e Gustavo Caetano e do Pull Request do Vitor Canto
 describe('o retorno do telefonema', () => {
-  it('deveria retornar o atendimento oi', async () => expect(answerPhone(true)).resolves
-    .toBe('Oi!'));
-  it('deveria retornar um erro', async () => expect(answerPhone(false)).rejects
-    .toThrow('Infelizmente não podemos atender...'));
+  it('deveria retornar o atendimento oi', async () => {
+    expect(answerPhone(true)).resolves
+      .toBe('Oi!');
+  });
+  it('deveria retornar um erro', async () => {
+    expect(answerPhone(false)).rejects
+      .toThrow('Infelizmente não podemos atender...');
+  });
 });
