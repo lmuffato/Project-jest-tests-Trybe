@@ -4,6 +4,7 @@
   "description": "Jest project",
   "scripts": {
     "test": "jest",
+    "test": "jest --watchAll --verbose",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
   },
   "repository": {
