@@ -12,7 +12,8 @@ Sua missão aqui é:
   ela deve funcionar entre cada teste.
   Opcional:
   - Para ficar mais visível, imprima na tela após cada teste o grupo de aventureiros restante.
-  - No fim dos testes, imprima uma mensagem com o nome do aventureiro que sobreviveu.
+  - No fim dos testes, imprima uma mensag
+  em com o nome do aventureiro que sobreviveu.
 
 PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 
@@ -20,8 +21,9 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
-
+  beforeEach(() => {
+    adventure.randomAttack();
+  });
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
