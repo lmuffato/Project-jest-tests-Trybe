@@ -10,11 +10,19 @@ a função recebe como parâmetro true e false, respectivamente.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+const answerPhone = require("../src/asyncJest");
+
+// código consertado após ver código 
+// do Adelino - https://github.com/tryber/sd-010-a-project-jest/pull/76
 describe('o retorno do telefonema', () => {
   test('atende', () => {
-    // Insira seu teste assíncrono aqui
+    expect.assertions(1);
+    return answerPhone(true).then(answer => {
+      expect(answer).toEqual('Oi!');
+    })
   });
   test('ocupado', () => {
-    // Insira seu teste assíncrono aqui
+    expect.assertions(1);
+    return expect(answerPhone(false)).rejects.toEqual(new Error('Infelizmente não podemos atender...'));
   });
 });
