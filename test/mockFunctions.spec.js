@@ -21,6 +21,7 @@ describe('verifica as funções e os mocks', () => {
   mockFunctions.multiply.mockImplementation((a, b) => a * b);
   mockFunctions.divide.mockImplementation((a, b) => a / b);
   mockFunctions.power.mockImplementation((a, b) => a ** b);
+  // ty Murilo
   mockFunctions.factorial.mockImplementation((a) => {
     const fact = (num) => (new Array(num).fill(0)
       .map((el, i) => el + i + 1).reduce((acc, curr) => acc * curr, 1));
