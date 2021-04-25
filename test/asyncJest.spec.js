@@ -15,11 +15,11 @@ describe('o retorno do telefonema', () => {
   test('atende', () => {
     // assert.fail();
     // Insira seu teste assíncrono aq ui
-    expect(answerPhone('atender')).resolves.toEqual('Oi!');
+    expect(answerPhone(true)).resolves.toEqual('Oi!');
   });
   test('ocupado', () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
-    expect(answerPhone('ocupado')).rejects.toEqual('Infelizmente não podemos atender...');
+    expect(answerPhone(false)).rejects.toEqual(new Error('Infelizmente não podemos atender...'));
   });
 });
