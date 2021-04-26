@@ -1,5 +1,7 @@
 const mockFunctions = require('../src/mockFunctions');
 
+jest.mock('../src/mockFunctions');
+
 /*
 Criamos uma série de funções com eficiência duvidosa.
 Elas estão no arquivo 'src/mockFunctions.js'.
@@ -16,6 +18,26 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
+  mockFunctions.add.mockImplementation((a, b) => a + b);
+  mockFunctions.divide.mockImplementation((a, b) => a / b);
+  mockFunctions.multiply.mockImplementation((a, b) => a * b);
+  mockFunctions.subtract.mockImplementation((a, b) => a - b);
+
+  mockFunctions.factorial.mockImplementation((a) => {
+    let fact = a;
+    for (let i = a - 1; i >= 1; i -= 1) {
+      fact *= i;
+    }
+    return fact;
+  });
+
+  mockFunctions.power.mockImplementation((a, b) => {
+    let pow = 1;
+    for (let i = 0; i < b; i += 1) {
+      pow *= a;
+    }
+    return pow;
+  });
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
@@ -60,3 +82,5 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.factorial(2)).toEqual(2);
   });
 });
+
+// Sobre a fatoração eu apenas consegui entendendo a lógica colocada nesse site, onde ele vai multiplicando pelo número menos 1 a cada rodada no for, e ai vai diminuindo o index até chegar no último número que é o 1. https://www.freecodecamp.org/news/how-to-factorialize-a-number-in-javascript-9263c89a4b38/
