@@ -24,6 +24,20 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica o usuário', () => {
   // Crie sua mock da função fetchURL() aqui
+  const dataTonico = {
+    gender: 'male',
+    name: { first: 'Antônio', last: 'Britto' },
+    location: {
+      country: 'Brazil',
+    },
+    email: 'tunico@bol.com.br',
+    login: {
+      username: 'tunicao123',
+      password: '1234567890',
+    },
+  };
+
+  api.fetchURL = jest.fn().mockResolvedValue(dataTonico);
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
@@ -37,3 +51,4 @@ describe('verifica o usuário', () => {
     })
   ));
 });
+// utilizei o jest.fn para mockar apenas a função que eu queria, e junto do mockResolvedValue eu inseri o valor que eu espero como retorno. No caso, o valor que eu esperava como retorno é um objeto que eu defini na linha 27;
