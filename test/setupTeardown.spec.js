@@ -22,6 +22,10 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
 
+  beforeEach(() => {
+    adventure.randomAttack();
+  });
+
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
@@ -38,3 +42,5 @@ describe('quem sobreviveu?', () => {
     expect(adventure.specialists.length).toBe(1);
   });
 });
+
+// Adicionei o beforeEach para executar a função randomAttack antes de cada teste. Sabendo que a função remove um especialista a cada execução, antes de cada teste, o nosso specialists.length será reduzido em um.
