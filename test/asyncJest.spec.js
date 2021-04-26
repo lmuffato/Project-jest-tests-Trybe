@@ -19,7 +19,7 @@ describe('o retorno do telefonema', () => {
     try {
       await answerPhone(false);
     } catch (err) {
-      expect(err).toEqual(new Error('Infelizmente não podemos atender...'))
+      expect(err).toEqual(new Error('Infelizmente não podemos atender...'));
     }
   });
 });
