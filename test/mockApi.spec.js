@@ -32,10 +32,10 @@ describe('verifica o usuário', () => {
     login: { username: 'tunicao123', password: '1234567890' },
   };
 
-  const mockTunicoReturn = jest.fn().mockResolvedValue(tunicoInfo);
+  api.fetchURL = jest.fn().mockResolvedValue(tunicoInfo);
 
   test('verifica se o usuário é o tunico', async () => (
-    mockTunicoReturn().then((user) => {
+    api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
       expect(user.name.first).toEqual('Antônio');
       expect(user.name.last).toEqual('Britto');
