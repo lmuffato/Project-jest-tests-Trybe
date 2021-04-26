@@ -10,9 +10,16 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('o retorno do telefonema', () => {
-  test('atende', () => {
+  test('atende', async () => {
+    const atendee = await answerPhone(true);
+    expect(atendee).toBe('Oi!');
   });
 
-  test('ocupado', () => {
+  test('ocupado', async () => {
+    try {
+      await answerPhone(false);
+    } catch (err) {
+      expect(err).toEqual(new Error('Infelizmente não podemos atender...'))
+    }
   });
 });
