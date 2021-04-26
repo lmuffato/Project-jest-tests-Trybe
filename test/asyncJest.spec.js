@@ -11,12 +11,10 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('Testes sobre a chamada', () => {
   it('Chamada atendida (True)', async () => {
-    expect.assertions(1);
     const data = await answerPhone(true);
     expect(data).toBe('Oi!');
   });
   it('Chamada ocupada (False)', async () => {
-    expect.assertions(1);
     try {
       await answerPhone(false);
     } catch (error) {
