@@ -55,11 +55,6 @@ describe('verifica o usuário', () => {
     phone: '021-953-7205',
     cell: '081-160-6277',
     id: { name: 'PPS', value: '0109675T' },
-    picture: {
-      large: 'https://randomuser.me/api/portraits/women/7.jpg',
-      medium: 'https://randomuser.me/api/portraits/med/women/7.jpg',
-      thumbnail: 'https://randomuser.me/api/portraits/thumb/women/7.jpg',
-    },
     nat: 'IE',
   };
 
