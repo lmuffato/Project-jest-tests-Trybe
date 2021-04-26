@@ -18,9 +18,10 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-
+// Após analisar o código da Elisa França e as aulas do Gustavo Caetano pude entender o que o requisito estava pedindo. A função beforeEach executa a função randomAttack que tem como objetivo eliminar um elemento do array a cada iteração. a função splice recebe dois parâmetros. O primeiro é de qual índice deverá ser removido ou alocado um novo elemento; o segundo diz a quantidade de elementos removidos da lista. https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  beforeEach(() => adventure.randomAttack());
+  afterEach(() => console.log(adventure.specialists));
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
