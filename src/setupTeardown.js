@@ -1,15 +1,15 @@
 // ATENÇÃO!!! Não edite este arquivo. Altere apenas os arquivos da pasta 'test'.
 const specialists = [{ nome: 'Tunico', classe: 'Mestre dos Magos' },
-{ nome: 'Cremoso', classe: 'Cavaleiro Negro' },
-{ nome: 'Gordinho', classe: 'Pirata' },
-{ nome: 'Lobo Solitário', classe: 'Samurai' },
-{ nome: 'Ousado', classe: 'Mago' },
-{ nome: 'Anjo Loiro', classe: 'Clérigo' }];
+  { nome: 'Cremoso', classe: 'Cavaleiro Negro' },
+  { nome: 'Gordinho', classe: 'Pirata' },
+  { nome: 'Lobo Solitário', classe: 'Samurai' },
+  { nome: 'Ousado', classe: 'Mago' },
+  { nome: 'Anjo Loiro', classe: 'Clérigo' }];
 
 const enemies = [{ nome: 'Barata', ataque: 'Voado' },
-{ nome: 'Esquilo', ataque: 'Mordido' },
-{ nome: 'Pé da mesa', ataque: 'Tropicado' },
-{ nome: 'Dragão', ataque: 'Soprado' }];
+  { nome: 'Esquilo', ataque: 'Mordido' },
+  { nome: 'Pé da mesa', ataque: 'Tropicado' },
+  { nome: 'Dragão', ataque: 'Soprado' }];
 
 const randomAttack = () => {
   const randomMonster = enemies[Math.floor(Math.random() * 4)];
