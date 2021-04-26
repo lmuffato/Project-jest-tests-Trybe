@@ -22,27 +22,22 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('quem sobreviveu?', () => {
   randomAttack();
   test('depois da primeira aventura', () => {
-    console.log(specialists);
     expect(specialists.length).toBe(5);
   });
   test('depois da segunda aventura', () => {
     randomAttack();
-    console.log(specialists);
     expect(specialists.length).toBe(4);
   });
   test('depois da terceira aventura', () => {
     randomAttack();
-    console.log(specialists);
     expect(specialists.length).toBe(3);
   });
   test('depois da quarta aventura', () => {
     randomAttack();
-    console.log(specialists);
     expect(specialists.length).toBe(2);
   });
   test('depois da quinta aventura', () => {
     randomAttack();
-    console.log(specialists);
     expect(specialists.length).toBe(1);
   });
 });
