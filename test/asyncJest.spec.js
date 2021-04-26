@@ -12,10 +12,12 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 // código feito baseado na documentação do Jest, das aulas da turma 8 e 7 com os professores Oliva e Gustavo Caetano e do Pull Request do Vitor Canto
 
 describe('o retorno do telefonema', () => {
-  test('atende', async () => {
+  test('atende', () => {
+    expect.assertions(1);
     expect(answerPhone(true)).resolves.toBe('Oi!');
   });
-  test('ocupado', async () => {
+  test('ocupado', () => {
+    expect.assertions(1);
     expect(answerPhone(false)).rejects
       .toThrow('Infelizmente não podemos atender...');
   });
