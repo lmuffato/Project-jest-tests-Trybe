@@ -12,10 +12,13 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere osgit sa arquivos da pasta '
 */
 
 describe('o retorno do telefonema', () => {
-  test('atende', () => {
-    expect(answerPhone(true)).resolves.toBe('Oi!');
+  test('atende', async () => {
+    await expect(answerPhone(true)).resolves.toEqual('Oi!');
   });
   test('ocupado', () => {
-    expect(answerPhone(false)).rejects.toBe('Infelizmente não podemos atender...');
+    expect.assertions(1);
+    return answerPhone().catch((data) => {
+      expect(answerPhone(false)).rejects.toEqual(data);
+    }); // aula do course 10.2 -> matcher .resolves / rejects.
   });
 });
