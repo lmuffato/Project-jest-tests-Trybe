@@ -48,7 +48,6 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.divide(1331, 11)).toEqual(121);
   });
   test('testa função power', () => {
-    // https://locomotivatech.com/2019/12/16/como-fazer-potenciacao-e-radiciacao-em-javascript/
     mockFunctions.power = jest.fn().mockImplementation((a, b) => a ** b);
     expect(mockFunctions.power(10, 2)).toEqual(100);
     expect(mockFunctions.power(2, 10)).toEqual(1024);
@@ -60,9 +59,10 @@ describe('verifica as funções e os mocks', () => {
     mockFunctions.factorial = jest.fn().mockImplementation((a) => {
       const fatorial = a;
       let result = fatorial;
-      for (let index = 1; index < result; index += 1) {
+      for (let index = 1; index < fatorial; index += 1) {
         result *= index;
       }
+      return result;
     });
     expect(mockFunctions.factorial(5)).toEqual(120);
     expect(mockFunctions.factorial(10)).toEqual(3628800);
