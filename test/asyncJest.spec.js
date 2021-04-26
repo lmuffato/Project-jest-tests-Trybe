@@ -11,6 +11,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('o retorno do telefonema', () => {
+  expect.assertions(1);
   test('atende', async () => {
     await expect(answerPhone(true)).resolves.toBe('Oi!');
   });
