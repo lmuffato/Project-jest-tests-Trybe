@@ -18,9 +18,13 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
+// jest.mock('../src/setupTeardown');
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  const randomAttack = jest.spyOn(adventure, 'randomAttack');
+  beforeEach(() => {
+    randomAttack();
+  });
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
