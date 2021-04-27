@@ -20,8 +20,12 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
-
+  // Esse "beforeEach" está executando a função "randomAttack" para
+  // escolher um especialista e dizer qual monstro vai eliminá-lo.
+  beforeEach(() => adventure.randomAttack());
+  // Depois de cada teste vai mostrar um array de objetos
+  // com a informação de quem sobrou no grupo dos especialistas.
+  afterEach(() => console.log(adventure.specialists));
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
