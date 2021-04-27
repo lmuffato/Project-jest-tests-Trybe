@@ -10,17 +10,10 @@ a função recebe como parâmetro true e false, respectivamente.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+// baseado em https://jestjs.io/pt-BR/docs/asynchronous
 describe('o retorno do telefonema', () => {
-  test('atende', () => {
-    expect.assertions(1);
-    return answerPhone('Oi!').then((data) => {
-      expect(data).toBe('Oi!');
-    });
-  });
-  test('ocupado', () => {
-    expect.assertions(0);
-    return answerPhone('Infelizmente não podemos atender...').catch((data) => {
-      expect(data).toBe('Infelizmente não podemos atender...');
-    });
-  });
+  test('atende', () => expect(answerPhone('Oi!')).resolves.toBe('Oi!'));
+
+  test('ocupado', () => expect(answerPhone())
+    .rejects.toThrow('Infelizmente não podemos atender...'));
 });
