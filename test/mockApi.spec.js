@@ -28,7 +28,9 @@ const dadosDoTunico = {
     first: 'Antônio',
     last: 'Britto',
   },
-  country: 'Brazil',
+  location: {
+    country: 'Brazil',
+  },
   email: 'tunico@bol.com.br',
   login: {
     username: 'tunicao123',
