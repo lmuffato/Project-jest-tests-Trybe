@@ -14,8 +14,17 @@ O foco aqui é a utilização de mock functions.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+jest.mock('../src/mockFunctions');
+
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  mockFunctions.power.mockImplementation((a, b) => a ** b);
+  mockFunctions.factorial.mockImplementation((a) => (
+    a <= 1 ? 1 : mockFunctions.factorial(a - 1) * a));
+  // http://devfuria.com.br/logica-de-programacao/recursividade-fatorial/
+  mockFunctions.add.mockImplementation((a, b) => a + b);
+  mockFunctions.subtract.mockImplementation((a, b) => a - b);
+  mockFunctions.divide.mockImplementation((a, b) => a / b);
+  mockFunctions.multiply.mockImplementation((a, b) => a * b);
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
@@ -60,3 +69,5 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.factorial(2)).toEqual(2);
   });
 });
+
+// https://jestjs.io/pt-BR/docs/mock-functions

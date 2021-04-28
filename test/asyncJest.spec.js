@@ -19,3 +19,5 @@ describe('o retorno do telefonema', () => {
     expect(answerPhone(false)).rejects.toThrow('Infelizmente não podemos atender...');
   });
 });
+
+//  https://jestjs.io/pt-BR/docs/asynchronous - Contribuição Victor Canto - Turma 10-A
