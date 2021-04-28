@@ -19,6 +19,6 @@ describe('o retorno do telefonema', () => {
     // assert.fail();
     answerPhone(false).catch((error) => {
       expect(error).toBe(new Error('Infelizmente não podemos atender...'));
-    })
+    });
   });
 });
