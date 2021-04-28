@@ -18,10 +18,11 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-
+// https://jestjs.io/pt-BR/docs/setup-teardown#repetindo-a-configura%C3%A7%C3%A3o-para-v%C3%A1rios-tes
+// Auxílio na desenvolvimento da lógica com Victor Canto - T10A
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
-
+  beforeEach(() => adventure.randomAttack());
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
