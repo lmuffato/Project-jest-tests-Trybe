@@ -18,9 +18,9 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-
+// jest.mock('../src/setupTeardown');
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  beforeEach(() => adventure.randomAttack());
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
@@ -38,3 +38,5 @@ describe('quem sobreviveu?', () => {
     expect(adventure.specialists.length).toBe(1);
   });
 });
+
+// Informação do beforeEach pesquisei no site (documentação) https://jestjs.io/pt-BR/docs/setup-teardown
