@@ -20,7 +20,9 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  
+  // consultado: https://jestjs.io/pt-BR/docs/setup-teardown, 
+  //o before roda a função antes de cada teste: https://deltice.github.io/jest/docs/pt-BR/api.html#:~:text=beforeEach(fn),ser%C3%A1%20usado%20por%20muitos%20testes.
+  beforeEach(() => adventure.randomAttack());
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
