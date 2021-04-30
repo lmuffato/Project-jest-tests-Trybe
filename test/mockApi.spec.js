@@ -24,14 +24,14 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica o usuário', () => {
   const apiUrl = jest.spyOn(api, 'fetchURL');
-  afterEach(api.fetchURL.mockReset);
+  afterEach(api.fetchURL);
 
   test('verifica se o usuário é o tunico', async () => {
-    apiUrl.mockResolvedValue('Realizada');
+    apiUrl.mockResolvedValue('requisição realizada com sucesso');
     apiUrl();
     api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
-      expect(user.name.first).toEqual('Antônio');
+      expect(user.name.first).toEqual('Antonio');
       expect(user.name.last).toEqual('Britto');
       expect(user.location.country).toEqual('Brazil');
       expect(user.email).toEqual('tunico@bol.com.br');
