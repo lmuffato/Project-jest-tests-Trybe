@@ -12,5 +12,6 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('o retorno do telefonema', () => {
   it('atende', () => expect(answerPhone(true)).resolves.toBe('Oi!'));
-  it('ocupado', () => expect(answerPhone(false)).rejects.toThrow('Infelizmente não podemos atender...'));
+  it('ocupado', () => expect(answerPhone(false))
+    .rejects.toThrow('Infelizmente não podemos atender...'));
 });
