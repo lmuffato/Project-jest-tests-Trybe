@@ -24,7 +24,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica o usuário', () => {
   // Crie sua mock da função fetchURL() aqui
-  api.fetchURL = jest.spyOn( api, "fetchURL");
+  api.fetchURL = jest.spyOn(api, 'fetchURL');
 
   const userInfo = {
     name: {
@@ -39,7 +39,7 @@ describe('verifica o usuário', () => {
     login: {
       username: 'tunicao123',
       password: '1234567890',
-    }
+    },
   };
 
   test('verifica se o usuário é o tunico', async () => {
