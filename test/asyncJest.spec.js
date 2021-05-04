@@ -10,13 +10,14 @@ a função recebe como parâmetro true e false, respectivamente.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+const expectAnswers = ['Oi!', 'Infelizmente não podemos atender...'];
+const [resolved, rejected] = expectAnswers;
+
 describe('o retorno do telefonema', () => {
   test('atende', () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+    answerPhone(true).then((response) => assert.strictEqual(response, resolved));
   });
   test('ocupado', () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+    answerPhone(false).then((response) => assert.strictEqual(response, rejected));
   });
 });
