@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json .",
-    "mt" : "jest --watch --coverage"
+    "mt" : "jest --watch"
   },
   "repository": {
     "type": "git",
