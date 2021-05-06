@@ -29,9 +29,9 @@ describe('verifica o usuário', () => {
     location: { country: 'Brazil' },
     email: 'tunico@bol.com.br',
     login: { username: 'tunicao123', password: '1234567890' },
-  }
+  };
 
-  api.fetchURL = jest.fn().mockReturnValue(object)
+  api.fetchURL = jest.fn().mockReturnValue(object);
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
