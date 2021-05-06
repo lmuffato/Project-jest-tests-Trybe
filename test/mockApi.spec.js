@@ -31,7 +31,7 @@ describe('verifica o usuário', () => {
     login: { username: 'tunicao123', password: '1234567890' },
   };
 
-  api.fetchURL = jest.fn().mockReturnValue(object);
+  api.fetchURL = jest.spyOn(api, 'fetchURL').mockResolvedValue(object);
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
