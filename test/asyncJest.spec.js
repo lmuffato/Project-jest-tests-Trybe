@@ -13,16 +13,13 @@ describe('o retorno do telefonema', () => {
   test('atende', async () => {
     const atende = await answerPhone(true);
     expect(atende).toStrictEqual('Oi!');
-    /* expect.assertions(1);
-    return answerPhone(true).then((response) => {
-      expect(response).toStrictEqual('Oi!');
-    }); */
   });
-  test('ocupado', () => {
-    expect(answerPhone(false)).rejects.toBe('Infelizmente não podemos atender...');
-    /* expect.assertions(1);
-    return answerPhone(false).catch((response) => {
-      expect(response).rejects.toEqual('Infelizmente não podemos atender...');
-    }); */
+
+  test('ocupado', async () => {
+    try {
+      await answerPhone(false);
+    } catch (error) {
+      expect(error).toEqual(new Error('Infelizmente não podemos atender...'));
+    }
   });
 });
