@@ -12,7 +12,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('o retorno do telefonema', () => {
   test('atende', async () => {
-      answerPhone(true).then((calback) => {
+    answerPhone(true).then((calback) => {
       expect(calback).toMatch('Oi!');
     });
   });
