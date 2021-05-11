@@ -35,7 +35,7 @@ const personDefault = {
 };
 
 describe('verifica o usuário', () => {
-  // Crie sua mock da função fetchURL() aqui
+  // Codigo desenvolvido com ajuda do colega Lucas Muffato.
   api.fetchURL = jest
     .fn()
     .mockResolvedValue(personDefault);
