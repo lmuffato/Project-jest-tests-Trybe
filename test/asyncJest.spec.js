@@ -21,5 +21,5 @@ describe('o retorno do telefonema', () => {
 //     const testing = answerPhone(false);
 //     expect(testing).rejects.toEqual({ error: 'Infelizmente não podemos atender...' });
 //   });
-// 
+//
 });
