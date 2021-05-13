@@ -26,6 +26,9 @@ describe('verifica as funções e os mocks', () => {
     }
     return fact;
   });
+  mockFunctions.subtract = jest.fn().mockImplementation((a, b) => a - b);
+  mockFunctions.divide = jest.fn().mockImplementation((a, b) => a / b);
+  mockFunctions.power = jest.fn().mockImplementation((a, b) => a ** b);
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
