@@ -22,7 +22,6 @@ const factorial = ((a) => {
 jest.mock('../src/mockFunctions');
 
 describe('verifica as funções e os mocks', () => {
-  
   mockFunctions.add.mockImplementation((a, b) => a + b);
   mockFunctions.subtract.mockImplementation((a, b) => a - b);
   mockFunctions.multiply.mockImplementation((a, b) => a * b);
