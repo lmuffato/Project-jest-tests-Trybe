@@ -9,6 +9,7 @@ describe('o retorno do telefonema', () => {
     answerPhone(true).then((response) => assert.strictEqual(response, resolved));
   });
   test('ocupado', () => {
-    answerPhone(false).then((response) => assert.strictEqual(response, rejected));
+    answerPhone(false).then((response) => assert.strictEqual(response, rejected))
+      .catch((err) => err);
   });
 });
