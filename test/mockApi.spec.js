@@ -29,14 +29,14 @@ describe('verifica o usuário', () => {
     await jest.fn().mockImplementation(() => {
       expect.assertions(7);
       return api.fetchURL().then((user) => {
-      expect(user.gender).toEqual('male');
-      expect(user.name.first).toEqual('Antônio');
-      expect(user.name.last).toEqual('Britto');
-      expect(user.location.country).toEqual('Brazil');
-      expect(user.email).toEqual('tunico@bol.com.br');
-      expect(user.login.username).toEqual('tunicao123');
-      expect(user.login.password).toEqual('1234567890');
+        expect(user.gender).toEqual('male');
+        expect(user.name.first).toEqual('Antônio');
+        expect(user.name.last).toEqual('Britto');
+        expect(user.location.country).toEqual('Brazil');
+        expect(user.email).toEqual('tunico@bol.com.br');
+        expect(user.login.username).toEqual('tunicao123');
+        expect(user.login.password).toEqual('1234567890');
+      });
     });
   });
-});
 });
