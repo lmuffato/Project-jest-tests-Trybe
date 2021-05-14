@@ -1,72 +1,50 @@
-const mockFunctions = require('../src/mockFunctions');
-
+const api = require('../src/mockApi');
 /*
-Criamos uma série de funções com eficiência duvidosa.
-Elas estão no arquivo 'src/mockFunctions.js'.
-Crie mock functions para cada uma das operações de modo que os cálculos sejam feitos corretamente,
-não como estão sendo feitos no arquivo original.
-A idéia é que os novos testes sobrescrevam os testes
-importados apenas na suite de testes abaixo.
-Importante! A correção de código via mock functions não é uma aplicação usual.
-O foco aqui é a utilização de mock functions.
+A função fetchURL retorna um JSON com informações de um usuário aleatório buscadas da API 'randomuser.me'.
+No entanto, nos testes abaixo, queremos que todas as vezes que chamarmos a API a resposta contenha as informações do nosso adminis..Cof! Cof!.. programador favorito, Tunicão.
+Faça um mock da função fetchURL() de forma que,
+independa de chamadas de API e retorne as seguintes informações do Tunico:
+- Gênero: Masculino
+- Primeiro nome: Antônio
+- Último nome: Britto
+- País: Brasil
+- Email: tunico@bol.com.br (Sim, é um email do bol mesmo...)
+- Nome de usuário: tunicao123
+- Senha: 1234567890 (Usem senhas fortes, crianças!)
+Note que as informações devem estar de acordo com o JSON'
+presente no README.md do projeto.
+Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
-describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
-  mockFunctions.add = jest.fn((a, b) => a + b);
-  mockFunctions.subtract = jest.fn((a, b) => a - b);
-  mockFunctions.multiply = jest.fn((a, b) => a * b);
-  mockFunctions.divide = jest.fn((a, b) => a / b);
-  mockFunctions.power = jest.fn((a, b) => a ** b);
-  mockFunctions.factorial = jest.fn((a) => {
-    let fact = a;
-    for (let i = 1; i < a; i += 1) {
-      fact *= i;
-    }
-    return fact;
+describe('verifica o usuário', () => {
+  // Crie sua mock da função fetchURL()  aqui
+  api.fetchURL = jest.fn().mockResolvedValue({
+    gender: 'male',
+    name: {
+      first: 'Antônio',
+      last: 'Britto',
+    },
+    location: {
+      country: 'Brazil',
+    },
+    email: 'tunico@bol.com.br',
+    login: {
+      username: 'tunicao123',
+      password: '1234567890',
+    },
+
   });
 
-  test('testa função add', () => {
-    expect(mockFunctions.add(1, 2)).toEqual(3);
-    expect(mockFunctions.add(8, 37)).toEqual(45);
-    expect(mockFunctions.add(-11, 25)).toEqual(14);
-    expect(mockFunctions.add(13, -188)).toEqual(-175);
-    expect(mockFunctions.add(7, 26)).toEqual(33);
-  });
-  test('testa função subtract', () => {
-    expect(mockFunctions.subtract(899, 35)).toEqual(864);
-    expect(mockFunctions.subtract(-17, 333)).toEqual(-350);
-    expect(mockFunctions.subtract(45, 97)).toEqual(-52);
-    expect(mockFunctions.subtract(23, -108)).toEqual(131);
-    expect(mockFunctions.subtract(-133, -29)).toEqual(-104);
-  });
-  test('testa função multiply', () => {
-    expect(mockFunctions.multiply(1, 2)).toEqual(2);
-    expect(mockFunctions.multiply(0, 5)).toEqual(0);
-    expect(mockFunctions.multiply(-4, 9)).toEqual(-36);
-    expect(mockFunctions.multiply(-12, -7)).toEqual(84);
-    expect(mockFunctions.multiply(19, 23)).toEqual(437);
-  });
-  test('testa função divide', () => {
-    expect(mockFunctions.divide(169, 13)).toEqual(13);
-    expect(mockFunctions.divide(-1900, 5)).toEqual(-380);
-    expect(mockFunctions.divide(42, 7)).toEqual(6);
-    expect(mockFunctions.divide(729, 243)).toEqual(3);
-    expect(mockFunctions.divide(1331, 11)).toEqual(121);
-  });
-  test('testa função power', () => {
-    expect(mockFunctions.power(10, 2)).toEqual(100);
-    expect(mockFunctions.power(2, 10)).toEqual(1024);
-    expect(mockFunctions.power(5, 5)).toEqual(3125);
-    expect(mockFunctions.power(1, 10)).toEqual(1);
-    expect(mockFunctions.power(0, 0)).toEqual(1);
-  });
-  test('testa função factorial', () => {
-    expect(mockFunctions.factorial(5)).toEqual(120);
-    expect(mockFunctions.factorial(10)).toEqual(3628800);
-    expect(mockFunctions.factorial(3)).toEqual(6);
-    expect(mockFunctions.factorial(8)).toEqual(40320);
-    expect(mockFunctions.factorial(2)).toEqual(2);
-  });
+  test('verifica se o usuário é o tunico', async () => (
+    api.fetchURL().then((user) => {
+      expect(user.gender).toEqual('male');
+      expect(user.name.first).toEqual('Antônio');
+      expect(user.name.last).toEqual('Britto');
+      expect(user.location.country).toEqual('Brazil');
+      expect(user.email).toEqual('tunico@bol.com.br');
+      expect(user.login.username).toEqual('tunicao123');
+      expect(user.login.password).toEqual('1234567890');
+    })
+  ));
 });
