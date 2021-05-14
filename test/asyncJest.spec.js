@@ -3,12 +3,15 @@ const answerPhone = require('../src/asyncJest');
 describe('o retorno do telefonema', () => {
   test('atende', () => {
     // Insira seu teste assíncrono aqui
-    answerPhone(true).then((recebida) =>
-      expect(recebida).toEqual('Oi!'));
+    expect.assertions(1);
+    return answerPhone(true).then((recebida) => {
+      expect(recebida).toBe('Oi!');
+    });
   });
   test('ocupado', () => {
     // Insira seu teste assíncrono aqui
-    answerPhone(false).catch((nrecebida) =>
-      expect(nrecebida).toEqual('Infelizmente não podemos atender...'));
+    expect.assertions(1);
+    return expect(answerPhone(false)).rejects
+      .toEqual(new Error('Infelizmente não podemos atender...'));
   });
 });
