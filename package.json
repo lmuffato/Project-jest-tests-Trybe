@@ -1,10 +1,10 @@
+
 {
   "name": "sd-0x-project-jest",
   "version": "1.0.0",
   "description": "Jest project",
   "scripts": {
-    "test": "jest",
-    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
+    "test": "jest --verbose"
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,8 @@
   },
   "homepage": "https://github.com/betrybe/sd-0x-project-jest#readme",
   "devDependencies": {
-    "acorn": "5.7.4",
-    "eslint-config-trybe-fundamentals": "1.1.0",
-    "jest": "24.9.0",
-    "minimist": "1.2.2"
+    "jest": "^24.9.0",
+    "acorn": ">=5.7.4",
+    "minimist": ">=1.2.2"
   }
 }
