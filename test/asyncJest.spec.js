@@ -9,14 +9,12 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('o retorno do telefonema', () => {
-  test('atende', () => {
+  test('atende', () =>
     // assert.fail();
     // Insira seu teste assíncrono aqui
-    return expect(answerPhone(true)).resolves.toEqual('Oi!');
-  });
-  test('ocupado', () => {
+    expect(answerPhone(true)).resolves.toEqual('Oi!'));
+  test('ocupado', () =>
     // assert.fail();
     // Insira seu teste assíncrono aqui
-    return expect(answerPhone(false)).rejects.toEqual(Error('Infelizmente não podemos atender...'))
-  });
+    expect(answerPhone(false)).rejects.toEqual(Error('Infelizmente não podemos atender...')));
 });
