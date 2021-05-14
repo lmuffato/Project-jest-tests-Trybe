@@ -18,9 +18,15 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
+// eliminar um a um do objeto
+// cada chamada da randomAtack remove um
+// altera arquivo original
+// o reset para o teste seguinte nao cabe nesse contexto
+// imprimir final?
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  beforeEach(() => adventure.randomAttack());
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
