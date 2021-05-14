@@ -13,14 +13,16 @@ Sua missão aqui é:
   Opcional:
   - Para ficar mais visível, imprima na tela após cada teste o grupo de aventureiros restante.
   - No fim dos testes, imprima uma mensagem com o nome do aventureiro que sobreviveu.
-
+-
 PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  afterEach(() => console.log(adventure.specialists));
+  afterAll(() => console.log(`O aventureiro sobrevivente é ${adventure.specialists[0]}`));
+  beforeEach(() => adventure.randomAttack());
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
