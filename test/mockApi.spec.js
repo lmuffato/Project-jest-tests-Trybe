@@ -21,9 +21,30 @@ Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
+// simular devolução de obj estático
+// mockar o retorno da api
+// teste async
+// retorno da fetch deve ser promisse resolvida
 
 describe('verifica o usuário', () => {
   // Crie sua mock da função fetchURL() aqui
+  const requestReturn = {
+    gender: 'male',
+    name: {
+      first: 'Antônio',
+      last: 'Britto',
+    },
+    location: {
+      country: 'Brazil',
+    },
+    email: 'tunico@bol.com.br',
+    login: {
+      username: 'tunicao123',
+      password: '1234567890',
+    },
+  };
+
+  api.fetchURL = jest.fn().mockImplementation(() => Promise.resolve(requestReturn));
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {

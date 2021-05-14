@@ -71,3 +71,6 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.factorial(2)).toEqual(2);
   });
 });
+
+// https://www.programiz.com/javascript/examples/factorial
+// https://javascript.info/task/factorial
